@@ -1,0 +1,78 @@
+h1 { color: red; }
+
+#bigonly, #smallonly {
+  border: 1px solid red;
+  margin: 10px;
+  padding: 10px;
+}
+
+#mystuff {
+  border: 3px solid blue;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction:row;
+  background-color: teal;
+}
+
+.stuff {
+  background-color: red;
+  padding: 10px;
+  margin: 10px;
+  flex: 1;
+}
+
+#animated {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid grey;
+  background-color: #eee;
+  width: 300px;
+}
+
+
+@keyframes changebox {
+  from {
+    width: 300px;
+    background-color: #eee;
+
+    transform: scale(0.75);
+  }
+
+  to {
+    width: 600px;
+    background-color: #333;
+
+    transform: scale(3);
+  }
+}
+
+
+#animated:hover {
+  animation: changebox;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@media screen and (min-width: 600px) {
+  #bigonly { display: block;}
+  #smallonly { display: none;}
+}
+
+@media screen and (max-width: 600px) {
+  #smallonly { display: block;}
+  #bigonly { display: none;}
+
+  #mystuff {
+    background-color: pink;
+    flex-direction: column;
+  }
+}
+
+#peggyswindow {
+  background: url('https://images.unsplash.com/photo-1496158704988-c4595d02a8e2?ixlib=rb-0.3.5&s=25402ea169389086d7c7e774f28bef22&auto=format&fit=crop&w=1050&q=80');
+  height: 200px;
+  background-position: cover;
+  background-attachment: fixed;
+}
